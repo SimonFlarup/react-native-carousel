@@ -7,6 +7,9 @@ let styles = StyleSheet.create({
     },
     page: {
         flex: 1
+    },
+    noItemsText: {
+        
     }
 });
 

@@ -1,14 +1,14 @@
 {
-  "name": "react-native-carousel-control",
-  "version": "2.0.1",
-  "description": "React Native Carousel control with support for iOS and Android.",
+  "name": "react-native-carousel",
+  "version": "1.0.0",
+  "description": "React Native Carousel with support for iOS and Android.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/machadogj/react-native-carousel-control.git"
+    "url": "git+https://github.com/SimonFlarup/react-native-carousel.git"
   },
   "keywords": [
     "react",
@@ -18,10 +18,11 @@
     "ios",
     "android"
   ],
-  "author": "Gustavo Machado <machadogj@gmail.com>",
+  "author": "Simon Holland Flarup <mail@simonflarup.dk>",
+  "contributors": ["Gustavo Machado <machadogj@gmail.com>"]
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/machadogj/react-native-carousel-control/issues"
+    "url": "https://github.com/SimonFlarup/react-native-carousel.git/issues"
   },
-  "homepage": "https://github.com/machadogj/react-native-carousel-control#readme"
+  "homepage": "https://github.com/SimonFlarup/react-native-carousel.git#readme"
 }
