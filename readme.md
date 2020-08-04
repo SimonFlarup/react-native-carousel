@@ -1,42 +1,23 @@
-# React Native Carousel Control
+# React Native Scrollview Carousel
 
 React Native Carousel with support for both iOS and Android.
-![carousel-demo](https://cloud.githubusercontent.com/assets/671212/13221426/1cc2d1fc-d95a-11e5-88d2-3c4d738814e9.gif)
-
-React >= 16 -> 2.x.x
-React <  16 -> 1.x.x
 
 ## Installation
 
 ```
-npm install react-native-carousel-control --save
+npm install react-native-scrollview-carousel --save
 ```
 
 ## Usage
 
 ```
-import Carousel from "react-native-carousel-control";
+import Carousel from "react-native-scrollview-carousel";
 //...
 <Carousel>
     <Text>Hello</Text>
     <Text>World!</Text>
     <Text>From carousel</Text>
 </Carousel>
-```
-
-The carousel has the following format:
-
-```
-     ------------
-    |      v--- page
-    |-   ----   -|
-    | | |    | | |
-    | | |    | | |
-    | | |    | | |
-    |-   ----   -|
-    |^-- sneak   |
-    |         ^--- gap
-     ------------
 ```
 
 ### pageStyle
@@ -49,12 +30,6 @@ The style that will be applied on the page. For example:
 <Carousel pageStyle={ {backgroundColor: "white", borderRadius: 5} }>
 ```
 
-### pageWidth
-
-Type: `PropTypes.number`
-
-The width of the page. By default it will adjust to `deviceWidth - 100`.
-
 ### initialPage
 
 Type: `PropTypes.number`
@@ -62,6 +37,7 @@ Type: `PropTypes.number`
 The index of the initial page. The first page is `0`.
 
 ### onPageChange
+! TBA !
 
 Type: `PropTypes.func`
 
@@ -71,26 +47,10 @@ This function will be called every time the page changes.
 
 Type: `PropTypes.number`
 
-How much of the adjacent pages will display (see format above).
-
-### currentPage
-
-Type: `PropTypes.number`
-
-Update this value to move carousel to a specific page. For example:
-
-```
-<Carousel currentPage={ this.state.pageNumber }>
-```
-
-### swipeThreshold
-
-Type: `PropTypes.number`
-
-How much users have to swipe to go to the next/prev page. Default: 0.5 (half the page)
+How much of the adjacent pages will display.
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Gustavo Machado <machadogj@gmail.com>.
+Copyright (c) 2020 Simon Holland Flarup <mail@simonflarup.dk>.
