@@ -1,7 +1,7 @@
 {
-  "name": "react-native-carousel",
-  "version": "1.0.0",
-  "description": "React Native Carousel with support for iOS and Android.",
+  "name": "react-native-scrollview-carousel",
+  "version": "2.0.0",
+  "description": "React Native ScrollView Carousel with support for iOS and Android.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,14 +12,13 @@
   },
   "keywords": [
     "react",
-    "react",
     "native",
     "carousel",
+	"scrollview",
     "ios",
     "android"
   ],
   "author": "Simon Holland Flarup <mail@simonflarup.dk>",
-  "contributors": ["Gustavo Machado <machadogj@gmail.com>"]
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/SimonFlarup/react-native-carousel.git/issues"
