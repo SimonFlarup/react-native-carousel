@@ -37,7 +37,6 @@ const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = (props) =>
         } else {
             scrollview.current.scrollTo({ x: position, y: 0, animated: true })
         }
-        console.log("position: " + position + " | CurrentPage: " + currentPage + " | SnapInterval " + snapInterval);
     }
 
     const OnLayout = (event: LayoutChangeEvent) => {
@@ -51,8 +50,6 @@ const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = (props) =>
         } else {
             setSnapInterval(layout.width - props.sneak! * 2);
         }
-
-        console.log("Height: " + layout.height + " | Width: " + layout.width);
     }
 
     let computedStyles: any = null;
@@ -90,7 +87,7 @@ const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = (props) =>
         return (
             <TouchableWithoutFeedback
                 key={index}
-                onPress={() => { console.log("Setting current page: " + index); setCurrentPage(index); }}
+                onPress={() => { setCurrentPage(index); }}
                 style={[{ flex: 1, overflow: 'hidden' }]}
             >
                 <View
