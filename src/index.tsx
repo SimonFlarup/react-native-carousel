@@ -18,7 +18,8 @@ type CarouselProps = {
 type CarouselDefaultProps = {
     initialPage?: number | 'center',
     sneak?: number,
-    vertical?: boolean
+    vertical?: boolean,
+    disabled?: boolean,
 };
 
 const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = (props) => {
@@ -46,9 +47,9 @@ const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = (props) =>
         setWidth(layout.width);
 
         if (props.vertical) {
-            setSnapInterval(layout.height - props.sneak! * 2);
+            setSnapInterval(layout.height - props.sneak!/2);
         } else {
-            setSnapInterval(layout.width - props.sneak! * 2);
+            setSnapInterval(layout.width - props.sneak!/2);
         }
     }
 
@@ -57,25 +58,21 @@ const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = (props) =>
     if (props.vertical) {
         computedStyles = StyleSheet.create({
             content: {
-                height: height,
+                height: height - props.sneak!/2,
                 width: width,
-                paddingVertical: props.sneak!,
-                marginVertical: -props.sneak!,
             },
             scrollview: {
-                paddingVertical: props.sneak!,
+                paddingVertical: props.sneak!/4,
             }
         });
     } else {
         computedStyles = StyleSheet.create({
             content: {
                 height: height,
-                width: width,
-                paddingHorizontal: props.sneak!,
-                marginHorizontal: -props.sneak!,
+                width: width - props.sneak!/2,
             },
             scrollview: {
-                paddingHorizontal: props.sneak!,
+                paddingHorizontal: props.sneak!/4,
             }
         })
     }
@@ -91,7 +88,7 @@ const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = (props) =>
                 style={[{ flex: 1, overflow: 'hidden' }]}
             >
                 <View
-                    style={[{ flexGrow: 1, overflow: 'hidden' }, computedStyles.content, props.pageStyle]}
+                    style={[{ flexGrow: 1, overflow: 'hidden', }, computedStyles.content, props.pageStyle]}
                 >
                     {child}
                 </View>
@@ -101,7 +98,7 @@ const Carousel: FunctionComponent<PropsWithChildren<CarouselProps>> = (props) =>
 
     return (
         <View style={{ flex: 1, }}>
-            <ScrollView bounces={false} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} overScrollMode={"never"} contentContainerStyle={[computedStyles.scrollview, props.containerStyle]} onLayout={OnLayout} horizontal={!props.vertical} snapToInterval={snapInterval} ref={scrollview}>
+            <ScrollView bounces={false} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false} overScrollMode={"never"} contentContainerStyle={[computedStyles.scrollview, props.containerStyle]} onLayout={OnLayout} horizontal={!props.vertical} snapToInterval={snapInterval} ref={scrollview} scrollEnabled={!props.disabled}>
                 {body}
             </ScrollView>
         </View>
@@ -112,6 +109,7 @@ Carousel.defaultProps = {
     initialPage: 0,
     sneak: 20,
     vertical: false,
+    disabled: false,
 }
 
 export default Carousel;
